@@ -61,7 +61,9 @@ You just need to :
 - restart your Domoticz server
 - add new hardware by selecting Diematic3 plugin, and setting ip address and ip port to connect to your USR module
 
-You are now able to browse new Devices from your Domoticz interface
+You are now able to browse new Devices from your Domoticz interface :
+
+![Domoticz Devices screenshot](ReadMeImages/Domoticz-ScreenShot.png)
 
 <h3>Limitations</h3>
 
