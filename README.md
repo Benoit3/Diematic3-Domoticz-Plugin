@@ -56,10 +56,8 @@ Remark : I let you read the doc to configure IP parameters of the USR-TCP-232-30
 
 <h3>Domoticz plugin deployment</h3>
 
-Plugin is available [here](Diematic3-Domoticz/)
-
 You just need to :
-- copy the directory itself into the plugin directory of your Domoticz server
+- copy the Diematic3-Domoticz directory itself into the plugin directory of your Domoticz server
 - restart your Domoticz server
 - add new hardware by selecting Diematic3 plugin, and setting ip address and ip port to connect to your USR module
 
