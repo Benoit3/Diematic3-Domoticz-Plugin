@@ -20,8 +20,8 @@
         This plugin connects to the heater trough an athernet RS485 interface. it should be configured with the IP address of the interface
     </description>
     <params>
-        <param field="Address" label="IP Address" width="200px" required="true" default="192.168.9.18"/>
-        <param field="Port" label="Port" width="30px" required="true" default="20108"/>
+        <param field="Address" label="IP Address" width="200px" required="true" default="192.168.1.X"/>
+        <param field="Port" label="Port" width="40px" required="true" default="20108"/>
         <param field="Mode6" label="Debug" width="100px">
             <options>
                 <option label="True" value="Debug"/>
@@ -87,6 +87,21 @@ class BasePlugin:
             return BasePlugin.__MODE_LABELS[data]
         else:
             return str(data) 
+    
+    #Diematic3 ECS mode labels
+    __ECS_MODE_LABELS={8:"AUTO",
+        0x00:"AUTO",
+        0x10:"PERM",
+        0x50:"TEMP"
+        }
+        
+    #Diematic3 alarm label conversion function
+    def diem3EcsModeLabel(data,bit):
+        data&=0x50
+        if data in BasePlugin.__ECS_MODE_LABELS:
+            return BasePlugin.__ECS_MODE_LABELS[data]
+        else:
+            return str(data) 
             
     #Diematic3 burner power
     __FAN_SPEED_MIN=1000
@@ -131,15 +146,16 @@ class BasePlugin:
     __UNIT_STATEB = 22
     __UNIT_MODEA = 23
     __UNIT_MODEB = 24
-    __UNIT_BURNERPOWER = 25
-    __UNIT_BOILERTEMP = 26
-    __UNIT_BOILERTEMPATARGET = 27
-    __UNIT_RETURNTEMP = 28
-    __UNIT_SMOKETEMP = 29
-    __UNIT_WATERPRESS = 30
-    __UNIT_ALARM = 31
-    __UNIT_DATE = 32
-    __UNIT_TIME = 33
+    __UNIT_MODEECS = 25
+    __UNIT_BURNERPOWER = 26
+    __UNIT_BOILERTEMP = 27
+    __UNIT_BOILERTEMPATARGET = 28
+    __UNIT_RETURNTEMP = 29
+    __UNIT_SMOKETEMP = 30
+    __UNIT_WATERPRESS = 31
+    __UNIT_ALARM = 32
+    __UNIT_DATE = 33
+    __UNIT_TIME = 34
 
     #device unit details
     __UNITS = [
@@ -168,6 +184,7 @@ class BasePlugin:
         [__UNIT_STATEB, "Etat Circuit B", "Text", 0, 0, {}, 0,0,0,None],
         [__UNIT_MODEA, "Mode Circuit A", "Text", 0, 0, {}, 0,17,0,diem3ModeLabel],
         [__UNIT_MODEB, "Mode Circuit B", "Text", 0, 0, {}, 0,26,0,diem3ModeLabel],
+        [__UNIT_MODEECS, "Mode ECS", "Text", 0, 0, {}, 0,17,0,diem3EcsModeLabel],
         [__UNIT_BURNERPOWER, "Burner Power", "Text", 243,31, {'Custom':'1;%'}, 0,455,0,diem3BurnerPower],
         [__UNIT_BOILERTEMP, "Boiler Temperature","Temperature", 0, 0, {}, 0,75,0,diem3Float],
         [__UNIT_BOILERTEMPATARGET, "Boiler Temperature Target","Temperature", 0, 0, {}, 0,21,0,diem3Float],
