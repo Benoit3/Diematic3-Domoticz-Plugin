@@ -38,7 +38,7 @@ It's why I chose to use following elements :
 - an interface USR-TCP-232-306 which is delivered in an enclosure and has bigger range for power supply voltage. USR-TCP-232-306 specifications can be found on USR-IOT website and bought averywhere. The interface RS485 port is connected on the ModBus port of the Boiler on on side and to the LAN on the other side. If you need it, you can use some WIFI version.
 - a Raspberry running a Domoticz server.
 
-![Web Interface Design](ReadMeImages/DiematicDiematicDomoticzDesign.png)
+![Web Interface Design](ReadMeImages/DiematicDomoticzPluginDesign.png)
 
 <h2>Making of</h2>
 <h3>Wiring</h3>
