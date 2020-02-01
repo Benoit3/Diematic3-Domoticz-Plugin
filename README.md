@@ -1,4 +1,4 @@
-# Diematic3-Domoticz-Plugin
+https://easydomoticz.com/forum/viewtopic.php?f=7&t=9520&p=78139#p78139# Diematic3-Domoticz-Plugin
 <h2>Making of a plugin usable in domoticz for De Dietrich boiler with Diematic 3 regulator</h2>
 
 The final goal is to be able to control boiler's general setting through Domoticz. But today only reading of parameters has been implemented.
@@ -77,4 +77,4 @@ Main found limitations of the Diematic 3 interfaces are :
 <h3>Miscellaneous</h3>
 
 
-For further info you can go to : TBC
+For further info you can go to [Easymotociz Forum](https://easydomoticz.com/forum/viewtopic.php?f=7&t=9520&p=78139#p78139)
